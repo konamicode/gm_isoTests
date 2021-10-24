@@ -5,6 +5,12 @@ z = 0;
 
 enum root {
 	env,
-	actor }
+	actor,
+	fx 
+}
 	
 rootType = root.env;
+actorParent = noone;
+
+image_speed = 0;
+startAlpha = image_alpha;

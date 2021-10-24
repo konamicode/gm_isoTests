@@ -3,3 +3,4 @@
 
 x += lengthdir_x(spd, movedir);
 y += lengthdir_y(spd, movedir);
+

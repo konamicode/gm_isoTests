@@ -39,16 +39,17 @@ if (ground_layer) {
 }
 
 
-//for (var i = 0; i <= room_width/32; i++)
-//{
-//	draw_line(i * 32, 0, i * 32, room_height);
-//}
+for (var i = 0; i <= room_width/32; i++)
+{
+	draw_line(i * 32, 0, i * 32, room_height);
+}
 
-//for (var j = 0; j <= room_height/32; j++)
-//{
-//	draw_line(0, j * 32, room_width, j * 32);
-//}
+for (var j = 0; j <= room_height/32; j++)
+{
+	draw_line(0, j * 32, room_width, j * 32);
+}
 
 with (obj3d) {
 	event_perform(ev_draw, 0)	
 }
+

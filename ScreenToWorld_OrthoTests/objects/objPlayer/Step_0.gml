@@ -44,16 +44,17 @@ if mouse_check_button_pressed(mb_left)
 }
 
 	
-	if objCursor.my_order == order.attack {
+if mouse_check_button_pressed(mb_right) {
 		//get direction of cursor
 		var aimDirection = point_direction(x, y, cur_x, cur_y);
 		//make bullet and move it in the direction of the cursor
-		var bullet = instance_create_layer(x, y, "Instances", objBullet);
+		var xoff = x + lengthdir_x(16, aimDirection);
+		var yoff = y + lengthdir_y(16, aimDirection);
+		var bullet = instance_create_layer(xoff, yoff, "Instances", objBullet);
 		bullet.movedir = aimDirection;
+		bullet.creator = id;
 	}
 
-	
-}
 
 if point_distance(x, y, new_x, new_y) > 1
 {

@@ -9,11 +9,17 @@ y = drawCoord[1] * 2/objCamera.window_scale;
 
 if image_alpha < 1 {
 	shader_set(shdr_dynaDither)
-	draw_self();
-	shader_reset();
+
+}
+
+if (alarm_get(0) mod 7 == 0) {
+	shader_set(shd_hitflash);
 }
 
 draw_self();
+shader_reset();
+
+//draw_text(bbox_right + 5, bbox_top, depth);
 
 
-
+//draw_rectangle(x-2, y-2, x + 2, y + 2, false);
