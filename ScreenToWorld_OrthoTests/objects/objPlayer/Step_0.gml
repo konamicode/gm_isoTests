@@ -14,14 +14,18 @@ if position_meeting(cur_x, cur_y, objActor)
 		draw_color = c_aqua;
 	else
 		draw_color = c_red;
+	
+	//objCursor.sprite_index = sprCursorCrosshair;
 }
-else 
+else {
 	draw_color = c_green;
+	//objCursor.sprite_index = sprCursorMove;
+}
 
 if mouse_check_button_pressed(mb_left)
 {
 
-	if !position_meeting(cur_x, cur_y, objActor) && (objCursor.my_order == order.move)
+	if !position_meeting(cur_x, cur_y, objActor)
 	{
 
 		new_x = (cur_x div 32 * 32) + sprite_get_xoffset(sprite_index);
@@ -37,6 +41,7 @@ if mouse_check_button_pressed(mb_left)
 			path_start(my_path, 4, path_action_stop, true);
 	}
 	
+}
 
 	
 	if objCursor.my_order == order.attack {
