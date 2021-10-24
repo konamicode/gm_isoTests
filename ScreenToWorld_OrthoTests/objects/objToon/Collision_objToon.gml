@@ -3,7 +3,7 @@
 
 
 if (depth > other.depth && rootType = root.actor) {
-	other.image_alpha = 0.33;
+	other.image_alpha = 0.5;
 }
 
 //check if other is a bullet and it's actorParent is not my actorParent

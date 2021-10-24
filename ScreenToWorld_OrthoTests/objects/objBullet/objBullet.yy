@@ -38,7 +38,7 @@
   "overriddenProperties": [
     {"propertyId":{"name":"toon","path":"objects/objActor/objActor.yy",},"objectId":{"name":"objActor","path":"objects/objActor/objActor.yy",},"value":"spr_bullet","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"type","path":"objects/objActor/objActor.yy",},"objectId":{"name":"objActor","path":"objects/objActor/objActor.yy",},"value":"root.fx","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"z","path":"objects/obj3d/obj3d.yy",},"objectId":{"name":"obj3d","path":"objects/obj3d/obj3d.yy",},"value":"-8","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"z","path":"objects/obj3d/obj3d.yy",},"objectId":{"name":"obj3d","path":"objects/obj3d/obj3d.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Objects",
