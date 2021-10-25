@@ -4,5 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
-creator = noone;
 my_toon.image_speed = 0;

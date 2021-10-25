@@ -11,13 +11,14 @@ enum camType {
 	persp
 }
 
-
+enum follow {
+	none,
+	player
+}
 
 //pitch =-(30)
 //pitch = -20;
 heading = 45;
-
-
 
 //camOriginX	= room_width;
 //camTargetX	= room_width/2;
@@ -27,28 +28,34 @@ heading = 45;
 //camTargetZ	= 0;
 
 
-window_scale = 4;
+window_scale = 2;
 
-function SetupGameWindow() {
+function SetupGameWindow(_window_scale) {
 	view_width = 1920/6;
 	view_height = 1080/6;
 
-	window_set_size(view_width * window_scale, view_height * window_scale);
+	window_set_size(view_width * _window_scale, view_height * _window_scale);
 	alarm[0] = 1;
 
-	surface_resize(application_surface, view_width * window_scale, view_height * window_scale);	
-	
-	display_set_gui_size(screenWidth, screenHeight);
+	surface_resize(application_surface, view_width * _window_scale, view_height * _window_scale);	
+	//var _w = window_get_width();
+	//var _h = window_get_height();
+	//display_set_gui_maximize(_window_scale, _window_scale, 0, 0);
+	//
+	//show_debug_message(string(_window_scale) + " | " + string(display_get_gui_width()) + " + " + string(_w) + ": " + string(display_get_gui_height()) + " + " + string(_h));
+	//display_set_gui_size(screenWidth, screenHeight);
 }
 
 function UpdateCameraPos() {
-	if instance_exists(objPlayer) {
+	if followTarget == follow.player {
 		camTargetX	= objPlayer.x;
 		camTargetY	= objPlayer.y;
-		camOriginX	= dcos(pitch) * dcos(heading) + objPlayer.x;	
-		camOriginY	= dcos(pitch) * dsin(heading) + objPlayer.y;		
+		//camTargetX = room_width/2;
+		//camTargetY = room_height/2;
+		camOriginX	= dcos(pitch) * dcos(heading) + camTargetX;	
+		camOriginY	= dcos(pitch) * dsin(heading) + camTargetY;		
 		
-	} else
+	} else if followTarget == follow.none
 	{
 		camTargetX	= room_width/2;
 		camTargetY	= room_height/2;
@@ -64,7 +71,7 @@ function UpdateCameraPos() {
 	camTargetZ	= 0;
 	
 	viewmat = matrix_build_lookat(camOriginX, camOriginY, camOriginZ, camTargetX, camTargetY, 0, 0, 0, 1);
-	projmat = matrix_build_projection_ortho(screenWidth* 0.75, screenHeight* 0.75, -1600, 1600);
+	projmat = matrix_build_projection_ortho(screenWidth * .5, screenHeight * .5, -1600, 1600);
 	camera = camera_get_active();
 	camera_set_view_mat(camera, viewmat);
 	camera_set_proj_mat(camera, projmat);
@@ -72,8 +79,9 @@ function UpdateCameraPos() {
 }
 
 function ResetCamera() {
-	viewmat = matrix_build_lookat(0, 0, -100, 0, 0, 100, 0, 1, 0);
-	projmat = matrix_build_projection_ortho(screenWidth, screenHeight, -1600, 1600);
+	//viewmat = matrix_build_lookat(0, 0, -100, 0, 0, 100, 0, 1, 0);
+	viewmat = matrix_build_identity();
+	projmat = matrix_build_projection_ortho(screenWidth, screenHeight, 1, 1600);
 	camera = camera_get_active();
 	camera_set_view_mat(camera, viewmat);
 	camera_set_proj_mat(camera, projmat);
@@ -82,7 +90,7 @@ function ResetCamera() {
 
 target = noone;
 
-SetupGameWindow();
+SetupGameWindow(window_scale);
 
 UpdateCameraPos();
 

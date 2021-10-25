@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-if (depth > other.depth && rootType = root.actor) {
+if (depth > other.depth && actorParent.object_index == objPlayer) {
 	other.image_alpha = 0.5;
 }
 

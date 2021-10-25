@@ -12,5 +12,4 @@ enum root {
 rootType = root.env;
 actorParent = noone;
 
-image_speed = 0;
 startAlpha = image_alpha;

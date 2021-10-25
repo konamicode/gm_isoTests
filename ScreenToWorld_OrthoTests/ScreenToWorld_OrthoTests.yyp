@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"rm_intro","path":"rooms/rm_intro/rm_intro.yy",},"order":3,},
     {"id":{"name":"sprTiles","path":"sprites/sprTiles/sprTiles.yy",},"order":15,},
     {"id":{"name":"helper","path":"scripts/helper/helper.yy",},"order":1,},
     {"id":{"name":"objToon","path":"objects/objToon/objToon.yy",},"order":4,},
@@ -53,6 +54,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"rm_intro","path":"rooms/rm_intro/rm_intro.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Room3","path":"rooms/Room3/Room3.yy",},},
     {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},

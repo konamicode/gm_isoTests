@@ -31,10 +31,10 @@
           ],"isDnd":false,"objectId":{"name":"objObstacle","path":"objects/objObstacle/objObstacle.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":2.0,"scaleY":3.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":160.0,"y":272.0,"resourceVersion":"1.0","name":"inst_6125682A","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"toon","path":"objects/objActor/objActor.yy",},"objectId":{"name":"objActor","path":"objects/objActor/objActor.yy",},"value":"spr3building","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-          ],"isDnd":false,"objectId":{"name":"objObstacle","path":"objects/objObstacle/objObstacle.yy",},"inheritCode":false,"hasCreationCode":false,"colour":2248146943,"rotation":0.0,"scaleX":2.0,"scaleY":3.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":288.0,"y":176.0,"resourceVersion":"1.0","name":"inst_6ECC9656","tags":[],"resourceType":"GMRInstance",},
+          ],"isDnd":false,"objectId":{"name":"objObstacle","path":"objects/objObstacle/objObstacle.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":2.0,"scaleY":3.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":32.0,"y":208.0,"resourceVersion":"1.0","name":"inst_6CA75908","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"toon","path":"objects/objActor/objActor.yy",},"objectId":{"name":"objActor","path":"objects/objActor/objActor.yy",},"value":"spr3building","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-          ],"isDnd":false,"objectId":{"name":"objObstacle","path":"objects/objObstacle/objObstacle.yy",},"inheritCode":false,"hasCreationCode":false,"colour":2248146943,"rotation":0.0,"scaleX":2.0,"scaleY":3.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":32.0,"y":208.0,"resourceVersion":"1.0","name":"inst_6CA75908","tags":[],"resourceType":"GMRInstance",},
+          ],"isDnd":false,"objectId":{"name":"objObstacle","path":"objects/objObstacle/objObstacle.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":2.0,"scaleY":3.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":288.0,"y":176.0,"resourceVersion":"1.0","name":"inst_4BBA882F","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":0,"userdefinedDepth":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"tilesetId":{"name":"ts","path":"tilesets/ts/ts.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":10,"SerialiseHeight":10,"TileSerialiseData":[
 2,2,1,1,1,1,1,1,1,1,
@@ -56,11 +56,11 @@
   "instanceCreationOrder": [
     {"name":"inst_18F2F168","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_37A61403","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_78D9D66D","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_406A8C8","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_6125682A","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_6ECC9656","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_78D9D66D","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_6CA75908","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_4BBA882F","path":"rooms/Room1/Room1.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

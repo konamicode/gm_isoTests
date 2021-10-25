@@ -17,13 +17,15 @@ if keyboard_check_pressed(vk_up)
 {
 	window_scale += 1;
 	window_scale = clamp(window_scale, 1, 6);
-	SetupGameWindow()	
+	show_debug_message(window_scale);	
+	SetupGameWindow(window_scale)	
 }
 
 if keyboard_check_pressed(vk_down)
 {
 	window_scale -= 1;
 	window_scale = clamp(window_scale, 1, 6);
-	SetupGameWindow()	
+	show_debug_message(window_scale);
+	SetupGameWindow(window_scale)	
 }
 

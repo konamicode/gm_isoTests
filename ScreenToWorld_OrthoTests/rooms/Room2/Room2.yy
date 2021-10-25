@@ -19,6 +19,7 @@
     {"instances":[
         {"properties":[
             {"propertyId":{"name":"pitch","path":"objects/objCamera/objCamera.yy",},"objectId":{"name":"objCamera","path":"objects/objCamera/objCamera.yy",},"value":"-20","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"followTarget","path":"objects/objCamera/objCamera.yy",},"objectId":{"name":"objCamera","path":"objects/objCamera/objCamera.yy",},"value":"follow.player","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"objCamera","path":"objects/objCamera/objCamera.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":704.0,"y":704.0,"resourceVersion":"1.0","name":"inst_3D333269","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"type","path":"objects/objActor/objActor.yy",},"objectId":{"name":"objActor","path":"objects/objActor/objActor.yy",},"value":"root.actor","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},

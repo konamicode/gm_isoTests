@@ -19,6 +19,7 @@ image_blend = c_white;
 x = mouse_gui_x;
 y = mouse_gui_y;
 
+//show_debug_message(string(x) + ", " + string(y));
 var _toon = instance_position(mouse_gui_x, mouse_gui_y, objToon)
 if _toon != noone {
 	if (_toon.actorParent.object_index) == objTarget {

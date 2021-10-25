@@ -48,8 +48,8 @@ if mouse_check_button_pressed(mb_right) {
 		//get direction of cursor
 		var aimDirection = point_direction(x, y, cur_x, cur_y);
 		//make bullet and move it in the direction of the cursor
-		var xoff = x + lengthdir_x(16, aimDirection);
-		var yoff = y + lengthdir_y(16, aimDirection);
+		var xoff = x + lengthdir_x(24, aimDirection);
+		var yoff = y + lengthdir_y(24, aimDirection);
 		var bullet = instance_create_layer(xoff, yoff, "Instances", objBullet);
 		bullet.movedir = aimDirection;
 		bullet.creator = id;
