@@ -9,4 +9,4 @@ var _newy = drawCoord[1] / objCamera.window_scale;
 x = _newx;
 y = _newy;
 
-depth = -y;
+//depth = -y;
