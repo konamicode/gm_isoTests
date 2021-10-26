@@ -5,7 +5,7 @@ var gridSize = room_width div 32;
 var gridX = x mod gridSize;
 var gridY = y div gridSize;
 depth = -((gridY * gridSize) + gridX);
-
+depth = -x - y;
 my_toon.x = x;
 my_toon.y = y;
 my_toon.z = z;
