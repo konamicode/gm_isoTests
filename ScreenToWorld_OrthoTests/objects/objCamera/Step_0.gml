@@ -2,14 +2,16 @@
 // You can write your code in this editor
 
 if mouse_wheel_up() {
-	pitch += 1;	
+	zoom += 0.125;	
 	
 	show_debug_message(pitch)
 }
 if mouse_wheel_down() {
-	pitch -= 1;	
+	zoom -= .125;	
 	show_debug_message(pitch)
 }
+
+zoom = clamp(zoom, 0.25, 1);
 
 UpdateCameraPos(target, camType.ortho);
 

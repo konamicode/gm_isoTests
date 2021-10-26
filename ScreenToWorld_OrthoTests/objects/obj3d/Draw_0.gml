@@ -4,8 +4,8 @@
 
 
 
-draw_rectangle_color(bbox_left, bbox_top, bbox_right, bbox_bottom, 
-				c_green, c_green, c_green, c_green, true);
+//draw_rectangle_color(bbox_left, bbox_top, bbox_right, bbox_bottom, 
+//				c_green, c_green, c_green, c_green, true);
 
 
 //draw_self();

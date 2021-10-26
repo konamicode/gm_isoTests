@@ -34,10 +34,7 @@ if (ground_layer) {
 			}
 		}
 	}
-	
-	draw_rectangle(0, 0, l * tile_w, k * tile_h, true);
 }
-
 
 for (var i = 0; i <= room_width/32; i++)
 {

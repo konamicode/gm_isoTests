@@ -1,16 +1,22 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-//matsprite = matrix_build(x, y, z, 0, 0, 45, 1, 1, 1);
-//matrix_set(matrix_world, matsprite);
-//draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, 0, c_white, image_alpha);
-//matrix_set(matrix_world, matrix_build_identity());
 
-//var drawCoord = world_to_screen(x, y, z, objCamera.viewmat, objCamera.projmat);
+if image_alpha < 1 {
+	shader_set(shdr_dynaDither)
 
-//objCamera.ResetCamera();
+}
 
-//x = drawCoord[0] * 2/objCamera.window_scale;
-//y = drawCoord[1] * 2/objCamera.window_scale;
+if (alarm_get(0) mod 7 == 0) {
+	shader_set(shd_hitflash);
+}
 
 
+
+objCamera.ResetCamera();
+draw_self();
+draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
+draw_text(x, bbox_bottom, string(depth));
+objCamera.UpdateCameraPos();
+
+shader_reset();

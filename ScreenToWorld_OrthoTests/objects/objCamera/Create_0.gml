@@ -29,7 +29,7 @@ heading = 45;
 
 
 window_scale = 2;
-
+zoom = 0.5
 function SetupGameWindow(_window_scale) {
 	view_width = 1920/6;
 	view_height = 1080/6;
@@ -71,7 +71,7 @@ function UpdateCameraPos() {
 	camTargetZ	= 0;
 	
 	viewmat = matrix_build_lookat(camOriginX, camOriginY, camOriginZ, camTargetX, camTargetY, 0, 0, 0, 1);
-	projmat = matrix_build_projection_ortho(screenWidth * .5, screenHeight * .5, -1600, 1600);
+	projmat = matrix_build_projection_ortho(screenWidth * 0.5, screenHeight * 0.5, -1600, 1600);
 	camera = camera_get_active();
 	camera_set_view_mat(camera, viewmat);
 	camera_set_proj_mat(camera, projmat);
@@ -80,8 +80,8 @@ function UpdateCameraPos() {
 
 function ResetCamera() {
 	//viewmat = matrix_build_lookat(0, 0, -100, 0, 0, 100, 0, 1, 0);
-	viewmat = matrix_build_identity();
-	projmat = matrix_build_projection_ortho(screenWidth, screenHeight, 1, 1600);
+	viewmat = matrix_build_lookat(160.5, 90.5, -16000, 160.5, 90.5, 16000, 0, 1, 0);
+	projmat = matrix_build_projection_ortho(screenWidth * .5, screenHeight * .5, -16000, 16000);
 	camera = camera_get_active();
 	camera_set_view_mat(camera, viewmat);
 	camera_set_proj_mat(camera, projmat);

@@ -13,3 +13,4 @@ rootType = root.env;
 actorParent = noone;
 
 startAlpha = image_alpha;
+
