@@ -5,8 +5,9 @@ var _collider = other;
 if (actorParent.object_index == objPlayer) {
 	with (actorParent)	
 	{
-		if position_meeting(x + 32, y, _collider.actorParent) || position_meeting(x, y + 32, _collider.actorParent) ||
-		position_meeting(x + lengthdir_x(48, 315), y + lengthdir_y(48, 315), _collider.actorParent)
+		//if position_meeting(x + 32, y, _collider.actorParent) || position_meeting(x, y + 32, _collider.actorParent) ||
+		//position_meeting(x + lengthdir_x(48, 315), y + lengthdir_y(48, 315), _collider.actorParent)
+		if bbox_right < _collider.actorParent.bbox_left || y < _collider.actorParent.bbox_top
 		{
 		//if (depth > other.depth  && actorParent.object_index == objPlayer) {
 			_collider.image_alpha = 0.5;

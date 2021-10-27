@@ -16,7 +16,7 @@ if (alarm_get(0) mod 7 == 0) {
 objCamera.ResetCamera();
 draw_self();
 draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
-draw_text(x, bbox_bottom, string(depth));
+//draw_text(x, bbox_bottom, string(depth));
 objCamera.UpdateCameraPos();
 
 shader_reset();
