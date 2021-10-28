@@ -61,6 +61,7 @@ var tex_bottom = uvs[3];
 switch(bitmask) {
 
 	case 1:
+	case 5:
 		vertex_add_point(vbuffer, start_x, width_y, z_height,  0, 0, 1, tex_left, tex_top, color, alpha);
 		vertex_add_point(vbuffer, width_x, width_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
 		vertex_add_point(vbuffer, start_x, width_y, z, 		   0, 0, 1, tex_left, tex_bottom, color, alpha);
@@ -69,6 +70,7 @@ switch(bitmask) {
 		vertex_add_point(vbuffer, width_x, width_y, z, 		   0, 0, 1, tex_right, tex_bottom, color, alpha);
 	break;
 	case 0:
+	case 2:
 	case 4:
 		vertex_add_point(vbuffer, start_x, width_y, z_height,  0, 0, 1, tex_left, tex_top, color, alpha);
 		vertex_add_point(vbuffer, width_x, width_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
@@ -83,7 +85,7 @@ switch(bitmask) {
 		vertex_add_point(vbuffer, width_x, start_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
 		vertex_add_point(vbuffer, width_x, start_y, z, 		   0, 0, 1, tex_right, tex_bottom, color, alpha);
 	break;
-	case 2:
+
 	case 8:
 	case 10:
 		vertex_add_point(vbuffer, width_x, width_y, z_height,  0, 0, 1, tex_left, tex_top, color, alpha);
