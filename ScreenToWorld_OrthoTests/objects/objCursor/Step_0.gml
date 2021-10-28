@@ -20,23 +20,33 @@ x = mouse_gui_x;
 y = mouse_gui_y;
 
 //show_debug_message(string(x) + ", " + string(y));
-var _toon = instance_position(mouse_gui_x, mouse_gui_y, objToon)
-if _toon != noone {
-	if (_toon.actorParent.object_index) == objTarget {
+var _list = ds_list_create();
+var _count = instance_position_list(mouse_gui_x, mouse_gui_y, objToon, _list, true);
+if _count > 0 {
+	var _canTarget = false;
+	for (var i = 0; i < ds_list_size(_list); i++) {
+		var _toon = _list[| i];
+		if (_toon.actorParent.object_index) == objTarget {
 		//show_debug_message("Hit 2d");
-		sprite_index = sprCursorCrosshair;
-		image_blend = c_red;
+			_canTarget = true;
+		} 
+
 	}
-}
-	
+	if  _canTarget 
+	{
+		sprite_index = sprCursorCrosshair;
+		image_blend = c_red;	
+	}	else
+		sprite_index = sprCursorMove;
+}	
 else {
 	
 	image_blend = c_white;	
 	//show_debug_message("Hit tile");
 	if !position_meeting(cur_x, cur_y, objActor) {
 		sprite_index = sprCursorMove;
-		//x = (mouse_gui_x div 32) * 32;
-		//y = (mouse_gui_y div 32) * 32;
+		//x = (cur_x div 32) * 32;
+		//y = (cur_y div 32) * 32;
 	}
 }
 
