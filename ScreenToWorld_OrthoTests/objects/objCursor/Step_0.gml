@@ -27,8 +27,8 @@ if _toon != noone {
 		sprite_index = sprCursorCrosshair;
 		image_blend = c_red;
 	}
-
 }
+	
 else {
 	
 	image_blend = c_white;	

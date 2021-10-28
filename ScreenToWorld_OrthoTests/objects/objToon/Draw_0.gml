@@ -14,7 +14,7 @@ if (alarm_get(0) mod 7 == 0) {
 
 
 objCamera.ResetCamera();
-draw_self();
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
 //draw_text(x, bbox_bottom, string(depth));
 objCamera.UpdateCameraPos();
