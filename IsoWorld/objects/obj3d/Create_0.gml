@@ -29,14 +29,15 @@ var color = c_white;
 var alpha = 1;
 
 
-var start_x = bbox_left - x;
-var start_y = bbox_top - y;
+var start_x = (bbox_left - x);
+var start_y = (bbox_top - y) ;
 
-var width_x = bbox_right - x ;
-var width_y = bbox_bottom - y; 
+var width_x = (bbox_right - x );
+var width_y = (bbox_bottom - y); 
 
-var z_height = -32;
 z = layer_get_depth(layer);
+var z_height = -32;
+
 var uvs = sprite_get_uvs(sprite_index, 0);
 var tex_left = uvs[0];
 var tex_top = uvs[1];
@@ -47,16 +48,16 @@ var tex_bottom = uvs[3];
 
 vertex_add_point(old_buffer, start_x, width_y, z_height,  0, 0, 1, tex_left, tex_top, color, alpha);
 vertex_add_point(old_buffer, width_x, width_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point(old_buffer, start_x, width_y, z, 		   0, 0, 1, tex_left, tex_bottom, color, alpha);
-vertex_add_point(old_buffer, start_x, width_y, z, 		   0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point(old_buffer, start_x, width_y, 0, 		   0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point(old_buffer, start_x, width_y, 0, 		   0, 0, 1, tex_left, tex_bottom, color, alpha);
 vertex_add_point(old_buffer, width_x, width_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point(old_buffer, width_x, width_y, z, 		   0, 0, 1, tex_right, tex_bottom, color, alpha);
+vertex_add_point(old_buffer, width_x, width_y, 0, 		   0, 0, 1, tex_right, tex_bottom, color, alpha);
 vertex_add_point(old_buffer, width_x, width_y, z_height,  0, 0, 1, tex_left, tex_top, color, alpha);
 vertex_add_point(old_buffer, width_x, start_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point(old_buffer, width_x, width_y, z, 		   0, 0, 1, tex_left, tex_bottom, color, alpha);
-vertex_add_point(old_buffer, width_x, width_y, z, 		   0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point(old_buffer, width_x, width_y, 0, 		   0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point(old_buffer, width_x, width_y, 0, 		   0, 0, 1, tex_left, tex_bottom, color, alpha);
 vertex_add_point(old_buffer, width_x, start_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point(old_buffer, width_x, start_y, z, 		   0, 0, 1, tex_right, tex_bottom, color, alpha);
+vertex_add_point(old_buffer, width_x, start_y, 0, 		   0, 0, 1, tex_right, tex_bottom, color, alpha);
 
 vertex_add_point(old_buffer, start_x, width_y, z_height,  0, 0, 1, tex_left, tex_top, color, alpha);
 vertex_add_point(old_buffer, start_x, start_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
