@@ -3,7 +3,7 @@
 
 UpdateCameraPos();
 
-vertex_submit(vbuffer, pr_linelist, 0);
+//vertex_submit(vbuffer, pr_linelist, 0);
 
 if (ground_layer) {
 	var layer_z_height = layer_get_depth(ground_layer);

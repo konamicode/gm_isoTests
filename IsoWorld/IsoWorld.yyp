@@ -1,10 +1,12 @@
 {
   "resources": [
     {"id":{"name":"helper","path":"scripts/helper/helper.yy",},"order":0,},
+    {"id":{"name":"spr_test_cube","path":"sprites/spr_test_cube/spr_test_cube.yy",},"order":6,},
     {"id":{"name":"objCamera","path":"objects/objCamera/objCamera.yy",},"order":0,},
+    {"id":{"name":"obj3d","path":"objects/obj3d/obj3d.yy",},"order":3,},
     {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},"order":4,},
     {"id":{"name":"vertex_tools","path":"scripts/vertex_tools/vertex_tools.yy",},"order":2,},
-    {"id":{"name":"obj3d","path":"objects/obj3d/obj3d.yy",},"order":2,},
+    {"id":{"name":"obj3dTile","path":"objects/obj3dTile/obj3dTile.yy",},"order":2,},
     {"id":{"name":"sprTiletest","path":"sprites/sprTiletest/sprTiletest.yy",},"order":1,},
     {"id":{"name":"screen_to_world","path":"scripts/screen_to_world/screen_to_world.yy",},"order":1,},
     {"id":{"name":"sprTiletest6","path":"sprites/sprTiletest6/sprTiletest6.yy",},"order":5,},

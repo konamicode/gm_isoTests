@@ -22,6 +22,8 @@ enum follow {
 heading = 45;
 
 window_scale = 2;
+viewmat = 0;
+projmat = 0;
 
 function SetupGameWindow(_window_scale) {
 	view_width = screenWidth;
@@ -42,10 +44,10 @@ function UpdateCameraPos() {
 		
 	} else if followTarget == follow.none
 	{
-		camTargetX	= room_width/4;
-		camTargetY	= room_height/4;
-		camOriginX	= dcos(pitch) * dcos(heading) + room_width/4;	
-		camOriginY	= dcos(pitch) * dsin(heading) + room_height/4;
+		camTargetX	= 0;
+		camTargetY	= 0;
+		camOriginX	= dcos(pitch) * dcos(heading) + 0;	
+		camOriginY	= dcos(pitch) * dsin(heading) + 0;
 	}
 		
 	camOriginZ = dsin(pitch);

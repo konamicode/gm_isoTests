@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_test_cube",
-    "path": "sprites/spr_test_cube/spr_test_cube.yy",
+    "name": "sprTiletest6",
+    "path": "sprites/sprTiletest6/sprTiletest6.yy",
   },
   "solid": false,
   "visible": false,
@@ -35,7 +35,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj3d",
+  "name": "obj3dTile",
   "tags": [],
   "resourceType": "GMObject",
 }
