@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_tile",
-    "path": "sprites/spr_tile/spr_tile.yy",
+    "name": "spr_ramp",
+    "path": "sprites/spr_ramp/spr_ramp.yy",
   },
   "solid": false,
   "visible": false,
@@ -26,7 +26,6 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
@@ -36,7 +35,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj3dTile",
+  "name": "obj3dRamp",
   "tags": [],
   "resourceType": "GMObject",
 }

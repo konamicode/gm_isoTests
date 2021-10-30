@@ -1,15 +1,18 @@
 {
   "spriteId": {
-    "name": "spr_tile",
-    "path": "sprites/spr_tile/spr_tile.yy",
+    "name": "spr_test_cube",
+    "path": "sprites/spr_test_cube/spr_test_cube.yy",
   },
   "solid": false,
   "visible": false,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_mask_rect",
+    "path": "sprites/spr_mask_rect/spr_mask_rect.yy",
+  },
   "persistent": false,
   "parentObjectId": {
-    "name": "obj3d",
-    "path": "objects/obj3d/obj3d.yy",
+    "name": "objEntity",
+    "path": "objects/objEntity/objEntity.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -36,7 +39,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj3dTile",
+  "name": "obj3dCube",
   "tags": [],
   "resourceType": "GMObject",
 }

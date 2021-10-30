@@ -1,11 +1,14 @@
 {
   "spriteId": {
-    "name": "spr_tile",
-    "path": "sprites/spr_tile/spr_tile.yy",
+    "name": "sprTiletest6",
+    "path": "sprites/sprTiletest6/sprTiletest6.yy",
   },
   "solid": false,
   "visible": false,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_mask_rect",
+    "path": "sprites/spr_mask_rect/spr_mask_rect.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "obj3d",
@@ -36,7 +39,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj3dTile",
+  "name": "obj3dAutoTile",
   "tags": [],
   "resourceType": "GMObject",
 }
