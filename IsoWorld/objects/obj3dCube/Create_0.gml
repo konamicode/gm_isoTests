@@ -29,11 +29,11 @@ var color = c_white;
 var alpha = 1;
 
 
-var start_x = (bbox_left);
-var start_y = (bbox_top) ;
+var start_x = (bbox_left - x);
+var start_y = (bbox_top - y) ;
 			  
-var width_x = (bbox_right);
-var width_y = (bbox_bottom); 
+var width_x = (bbox_right - x);
+var width_y = (bbox_bottom - y); 
 
 z = layer_get_depth(layer);
 var z_height = -32;

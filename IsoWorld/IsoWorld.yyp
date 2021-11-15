@@ -19,6 +19,7 @@
     {"id":{"name":"sprTiletest6","path":"sprites/sprTiletest6/sprTiletest6.yy",},"order":5,},
     {"id":{"name":"objEntity","path":"objects/objEntity/objEntity.yy",},"order":7,},
     {"id":{"name":"spr_tile","path":"sprites/spr_tile/spr_tile.yy",},"order":7,},
+    {"id":{"name":"spr_mask_rect_centered","path":"sprites/spr_mask_rect_centered/spr_mask_rect_centered.yy",},"order":13,},
     {"id":{"name":"ts","path":"tilesets/ts/ts.yy",},"order":0,},
     {"id":{"name":"spr_van","path":"sprites/spr_van/spr_van.yy",},"order":12,},
     {"id":{"name":"sprTiles","path":"sprites/sprTiles/sprTiles.yy",},"order":2,},

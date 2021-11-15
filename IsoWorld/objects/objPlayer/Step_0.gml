@@ -23,6 +23,7 @@ if (place_meeting(x + hsp, y, objEntity)) {
 		if _collide.z >= 0
 			hsp = 0;
 	}
+	hsp = 0;
 }
 
 if (place_meeting(x, y + vsp,  objEntity)) {
@@ -34,6 +35,7 @@ if (place_meeting(x, y + vsp,  objEntity)) {
 		if _collide.z >= 0
 			vsp = 0;
 	}
+	vsp = 0;
 }
 
 var ramp = instance_position(x, y, obj3dRamp);

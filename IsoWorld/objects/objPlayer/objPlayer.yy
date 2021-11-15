@@ -6,8 +6,8 @@
   "solid": false,
   "visible": false,
   "spriteMaskId": {
-    "name": "spr_mask_rect",
-    "path": "sprites/spr_mask_rect/spr_mask_rect.yy",
+    "name": "spr_mask_rect_centered",
+    "path": "sprites/spr_mask_rect_centered/spr_mask_rect_centered.yy",
   },
   "persistent": false,
   "parentObjectId": {
