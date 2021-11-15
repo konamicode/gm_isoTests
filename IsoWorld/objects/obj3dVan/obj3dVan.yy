@@ -5,7 +5,10 @@
   },
   "solid": false,
   "visible": false,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_mask_rect",
+    "path": "sprites/spr_mask_rect/spr_mask_rect.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "objEntity",
@@ -22,7 +25,12 @@
   "physicsFriction": 0.2,
   "physicsStartAwake": true,
   "physicsKinematic": false,
-  "physicsShapePoints": [],
+  "physicsShapePoints": [
+    {"x":0.0,"y":0.0,},
+    {"x":32.0,"y":0.0,},
+    {"x":32.0,"y":32.0,},
+    {"x":0.0,"y":32.0,},
+  ],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
@@ -30,7 +38,8 @@
     {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [
-    {"varType":5,"value":"spr_test_cube","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"sprite","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":5,"value":"spr_van","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"sprite","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":0,"value":"-48","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"zheight","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [],
   "parent": {
@@ -38,7 +47,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj3dCube",
+  "name": "obj3dVan",
   "tags": [],
   "resourceType": "GMObject",
 }

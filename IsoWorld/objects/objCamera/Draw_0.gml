@@ -3,7 +3,9 @@
 
 UpdateCameraPos();
 
-//vertex_submit(vbuffer, pr_linelist, 0);
+vertex_submit(vbuffer, pr_linelist, 0);
+
+//draw_rectangle_color(0, 0, room_width, room_height, c_green, c_green, c_green, c_green, true);
 
 if (ground_layer) {
 	var layer_z_height = layer_get_depth(ground_layer);

@@ -5,7 +5,10 @@
   },
   "solid": false,
   "visible": false,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_mask_rect",
+    "path": "sprites/spr_mask_rect/spr_mask_rect.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "objEntity",

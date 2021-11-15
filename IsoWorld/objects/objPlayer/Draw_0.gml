@@ -15,7 +15,7 @@ var old_y = y;
 matrix_set(matrix_world, matrix_build(x, y, z, -60, 0, 45, 1, 1, 1));
 draw_sprite(sprite_index, image_index, 0, 0);
 matrix_set(matrix_world, matrix_build_identity());
-
+draw_rectangle_color(bbox_left, bbox_top, bbox_right, bbox_bottom, c_aqua, c_aqua, c_aqua, c_aqua, true);
 //x = old_x;
 //y = old_y;
 

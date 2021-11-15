@@ -13,14 +13,20 @@ function vertex_set_format() {
 	#endregion	
 }
 
-function vertex_add_point(_vbuffer, xx, yy, zz, nx, ny, nz, tu, tv, vcolor, valpha) {
+function vertex_add_point(_vbuffer, xx, yy, zz, nx, ny, nz, vcolor, valpha) {
+
+	vertex_position_3d(_vbuffer, xx, yy, zz);
+	vertex_normal(_vbuffer, nx, ny, nz);
+	vertex_color(_vbuffer, vcolor, valpha);
+}
+
+
+function vertex_add_point_tex(_vbuffer, xx, yy, zz, nx, ny, nz, tu, tv, vcolor, valpha) {
 
 	vertex_position_3d(_vbuffer, xx, yy, zz);
 	vertex_normal(_vbuffer, nx, ny, nz);
 	vertex_texcoord(_vbuffer, tu, tv);
 	vertex_color(_vbuffer, vcolor, valpha);
-
-
 }
 
 function create_buffer_list()

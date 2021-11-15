@@ -12,15 +12,15 @@
 //	show_debug_message(global.zoom[global.zoomLvl]);
 //}
 
-//if keyboard_check(vk_left)
-//{
-//	heading += 5;
-//}
+if keyboard_check(vk_left)
+{
+	heading += 5;
+}
 
-//if keyboard_check(vk_right)
-//{
-//	heading -= 5;
-//}
+if keyboard_check(vk_right)
+{
+	heading -= 5;
+}
 
 if keyboard_check_pressed(vk_up)
 {

@@ -98,13 +98,13 @@ var alpha = 0.8;
 
 for (var i = 0; i <= room_height; i += s) {
 
-	vertex_add_point(vbuffer, i, 0, 0, 0, 0, 1, 0, 0, color_x, alpha);
-	vertex_add_point(vbuffer, i, room_width, 0, 0, 0, 1, 0, 0, color_x, alpha);	
+	vertex_add_point_tex(vbuffer, i, 0, 0, 0, 0, 1, 0, 0, color_x, alpha);
+	vertex_add_point_tex(vbuffer, i, room_width, 0, 0, 0, 1, 0, 0, color_x, alpha);	
 }
 for (var j = 0; j <= room_width ; j += s) {
 
-	vertex_add_point(vbuffer, 0, j, 0, 0, 0, 1, 0, 0, color, alpha);
-	vertex_add_point(vbuffer, room_height, j, 0, 0, 0, 1, 0, 0, color, alpha);	             
+	vertex_add_point_tex(vbuffer, 0, j, 0, 0, 0, 1, 0, 0, color, alpha);
+	vertex_add_point_tex(vbuffer, room_height, j, 0, 0, 0, 1, 0, 0, color, alpha);	             
 
 }
 

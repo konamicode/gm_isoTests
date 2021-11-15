@@ -15,19 +15,26 @@ vertex_format_add_color();
 global.vertex_format = vertex_format_end();
 #endregion
 
-old_buffer = vertex_create_buffer();
-vertex_begin(old_buffer, global.vertex_format);
+#region vertex format setup
+// Vertex format: data must go into vertex buffers in the order defined by this
+vertex_format_begin();
+vertex_format_add_position_3d();
+vertex_format_add_normal();
+vertex_format_add_color();
+global.flatshade = vertex_format_end();
+#endregion
 
-#region create the plane
+//old_buffer = vertex_create_buffer();
+//vertex_begin(old_buffer, global.vertex_format);
+
+#region create the polygon mesh
 old_buffer = vertex_create_buffer();
 vertex_begin(old_buffer, global.vertex_format);
 texture = sprite_get_texture(sprite_index, 0);
 
 
 var color = c_white;
-
 var alpha = 1;
-
 
 var start_x = (bbox_left);
 var start_y = (bbox_top) ;
@@ -36,36 +43,33 @@ var width_x = (bbox_right);
 var width_y = (bbox_bottom); 
 
 z = layer_get_depth(layer);
-var z_height = -32;
+var z_height = zheight;
 
 var uvs = sprite_get_uvs(sprite_index, 0);
 var tex_left = uvs[0];
 var tex_top = uvs[1];
 var tex_right = uvs[2];
 var tex_bottom = uvs[3];
-
-
+show_debug_message(uvs);
 
 vertex_add_point_tex(old_buffer, start_x, width_y, z_height,  0, 0, 1, tex_left, tex_top, color, alpha);
 vertex_add_point_tex(old_buffer, width_x, width_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point_tex(old_buffer, start_x, width_y, 0, 		   0, 0, 1, tex_left, tex_bottom, color, alpha);
-vertex_add_point_tex(old_buffer, start_x, width_y, 0, 		   0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point_tex(old_buffer, start_x, width_y, 0, 		  0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point_tex(old_buffer, start_x, width_y, 0, 		  0, 0, 1, tex_left, tex_bottom, color, alpha);
 vertex_add_point_tex(old_buffer, width_x, width_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, width_y, 0, 		   0, 0, 1, tex_right, tex_bottom, color, alpha);
+vertex_add_point_tex(old_buffer, width_x, width_y, 0, 		  0, 0, 1, tex_right, tex_bottom, color, alpha);
 vertex_add_point_tex(old_buffer, width_x, width_y, z_height,  0, 0, 1, tex_left, tex_top, color, alpha);
 vertex_add_point_tex(old_buffer, width_x, start_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, width_y, 0, 		   0, 0, 1, tex_left, tex_bottom, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, width_y, 0, 		   0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point_tex(old_buffer, width_x, width_y, 0, 		  0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point_tex(old_buffer, width_x, width_y, 0, 		  0, 0, 1, tex_left, tex_bottom, color, alpha);
 vertex_add_point_tex(old_buffer, width_x, start_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, start_y, 0, 		   0, 0, 1, tex_right, tex_bottom, color, alpha);
+vertex_add_point_tex(old_buffer, width_x, start_y, 0, 		  0, 0, 1, tex_right, tex_bottom, color, alpha);
 vertex_add_point_tex(old_buffer, start_x, width_y, z_height,  0, 0, 1, tex_left, tex_top, color, alpha);
 vertex_add_point_tex(old_buffer, start_x, start_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
 vertex_add_point_tex(old_buffer, width_x, width_y, z_height,  0, 0, 1, tex_left, tex_bottom, color, alpha);
 vertex_add_point_tex(old_buffer, width_x, width_y, z_height,  0, 0, 1, tex_left, tex_bottom, color, alpha);
 vertex_add_point_tex(old_buffer, start_x, start_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
 vertex_add_point_tex(old_buffer, width_x, start_y, z_height,  0, 0, 1, tex_right, tex_bottom, color, alpha);
-
-
 
 vertex_end(old_buffer);
 #endregion
@@ -79,7 +83,7 @@ for ( var i = 0; i < buffer_get_size(vertex_data); i+= 36)
 	var yy = buffer_peek(vertex_data, i + 4, buffer_f32);
 	var zz = buffer_peek(vertex_data, i + 8, buffer_f32);
 	verts[array_length(verts)] = [xx, yy, zz];
-	show_debug_message("vertices: " + string(xx) + ", " + string(yy) + ", " +  string(zz));
+	//show_debug_message("vertices: " + string(xx) + ", " + string(yy) + ", " +  string(zz));
 }
 buffer_delete(vertex_data);
 
@@ -140,7 +144,8 @@ for (var i = 0; i < array_length(verts); i++) {
 	_v -= origin[1] /  (1 * objCamera.window_scale);
 	_u = u_offset + ((1 - ((max_u - _u) / u_dist)) * u_length);
 	_v = v_offset + ((1 - ((max_v - _v) / v_dist))  * v_length);
-
+	show_debug_message("u: " + string(_u) + ", v: " + string(_v));
+	
 	vertex_add_point_tex(vbuffer, _x, _y, _z,  0, 0, 1, _u, _v, color, alpha);
 }
 
