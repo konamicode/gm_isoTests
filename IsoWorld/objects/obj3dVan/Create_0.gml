@@ -46,8 +46,8 @@ var right_x = sprite_width - sprite_xoffset;
 var right_y = (dtan(angle) * right_x);
 
 
-var screen_origin = world_to_screen(x, y, 0, objCamera.viewmat, objCamera.projmat);
-var _origin = screen_to_world(x, y, objCamera.viewmat, objCamera.projmat);
+var screen_origin = world_to_screen(0, 0, 0, objCamera.viewmat, objCamera.projmat);
+var _origin = screen_to_world(0, 0, objCamera.viewmat, objCamera.projmat);
 var _width = screen_to_world(screen_origin[0] - left_x, screen_origin[1] - left_y, objCamera.viewmat, objCamera.projmat);
 var _depth = screen_to_world(screen_origin[0] + right_x, screen_origin[1] + right_y, objCamera.viewmat, objCamera.projmat);
 var _height = screen_to_world(screen_origin[0], screen_origin[1] - height, objCamera.viewmat, objCamera.projmat);
@@ -61,8 +61,8 @@ depth_y = _depth[1] * _depth[5] / -_depth[2] + _depth[4];
 height_x = _height[0] * _height[5] / -_height[2] + _height[3];
 height_y = _height[1] * _height[5] / -_height[2] + _height[4];
 			  
-var origin_x = x + 1; // * texel_w;
-var origin_y = y + 1; //* texel_w;
+var origin_x = 0; // * texel_w;
+var origin_y = 0; //* texel_w;
 
 z = layer_get_depth(layer);
 var z_height = z + height;
