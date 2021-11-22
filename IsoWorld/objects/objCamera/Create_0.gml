@@ -20,8 +20,9 @@ enum follow {
 }
 
 heading = 45;
+rotate = false;
 
-window_scale = 2;
+window_scale = 1;
 viewmat = 0;
 projmat = 0;
 

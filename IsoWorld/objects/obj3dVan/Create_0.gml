@@ -31,45 +31,81 @@ global.flatshade = vertex_format_end();
 old_buffer = vertex_create_buffer();
 vertex_begin(old_buffer, global.vertex_format);
 texture = sprite_get_texture(sprite_index, 0);
-
+var texel_h = texture_get_texel_height(texture);
+var texel_w = texture_get_texel_width(texture);
 
 var color = c_white;
 var alpha = 1;
 
-var start_x = (bbox_left - x);
-var start_y = (bbox_top - y) ;
+var angle = 30;//darctan(1/2);
+
+var left_x = sprite_xoffset;
+var left_y = (dtan(angle) * left_x);
+
+var right_x = sprite_width - sprite_xoffset;
+var right_y = (dtan(angle) * right_x);
+
+
+var screen_origin = world_to_screen(x, y, 0, objCamera.viewmat, objCamera.projmat);
+var _origin = screen_to_world(x, y, objCamera.viewmat, objCamera.projmat);
+var _width = screen_to_world(screen_origin[0] - left_x, screen_origin[1] - left_y, objCamera.viewmat, objCamera.projmat);
+var _depth = screen_to_world(screen_origin[0] + right_x, screen_origin[1] + right_y, objCamera.viewmat, objCamera.projmat);
+var _height = screen_to_world(screen_origin[0], screen_origin[1] - height, objCamera.viewmat, objCamera.projmat);
+
+width_x = _width[0] * _width[5] / -_width[2] + _width[3];
+width_y = _width[1] * _width[5] / -_width[2] + _width[4];
+
+depth_x = _depth[0] * _depth[5] / -_depth[2] + _depth[3];
+depth_y = _depth[1] * _depth[5] / -_depth[2] + _depth[4];
+
+height_x = _height[0] * _height[5] / -_height[2] + _height[3];
+height_y = _height[1] * _height[5] / -_height[2] + _height[4];
 			  
-var width_x = (bbox_right - x);
-var width_y = (bbox_bottom - y);
+var origin_x = x + 1; // * texel_w;
+var origin_y = y + 1; //* texel_w;
 
 z = layer_get_depth(layer);
-var z_height = zheight;
+var z_height = z + height;
+
+image_xscale = -(width_x / (bbox_right - bbox_left));
+image_yscale = (depth_x / (bbox_bottom - bbox_top));
+
 
 var uvs = sprite_get_uvs(sprite_index, 0);
-var tex_left = uvs[0];
-var tex_top = uvs[1];
-var tex_right = uvs[2];
-var tex_bottom = uvs[3];
-show_debug_message(uvs);
+var tex_left =		uvs[0] ;
+var tex_top =		uvs[1] ;
+var tex_right =		uvs[2] ;
+var tex_bottom =	uvs[3] ;
 
-vertex_add_point_tex(old_buffer, start_x, width_y, z_height,  0, 0, 1, tex_left, tex_top, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, width_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point_tex(old_buffer, start_x, width_y, 0, 		  0, 0, 1, tex_left, tex_bottom, color, alpha);
-vertex_add_point_tex(old_buffer, start_x, width_y, 0, 		  0, 0, 1, tex_left, tex_bottom, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, width_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, width_y, 0, 		  0, 0, 1, tex_right, tex_bottom, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, width_y, z_height,  0, 0, 1, tex_left, tex_top, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, start_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, width_y, 0, 		  0, 0, 1, tex_left, tex_bottom, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, width_y, 0, 		  0, 0, 1, tex_left, tex_bottom, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, start_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, start_y, 0, 		  0, 0, 1, tex_right, tex_bottom, color, alpha);
-vertex_add_point_tex(old_buffer, start_x, width_y, z_height,  0, 0, 1, tex_left, tex_top, color, alpha);
-vertex_add_point_tex(old_buffer, start_x, start_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, width_y, z_height,  0, 0, 1, tex_left, tex_bottom, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, width_y, z_height,  0, 0, 1, tex_left, tex_bottom, color, alpha);
-vertex_add_point_tex(old_buffer, start_x, start_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
-vertex_add_point_tex(old_buffer, width_x, start_y, z_height,  0, 0, 1, tex_right, tex_bottom, color, alpha);
+var tex_x = uvs[0] / (texel_w);
+var tex_y = uvs[1] / (texel_w);		  
+var tex_w = uvs[2] / (texel_w);
+var tex_v = uvs[3] / (texel_w);
+
+var width = tex_w - tex_x;
+var length = tex_v - tex_y;
+
+//left/depth face
+vertex_add_point_tex(old_buffer, width_x, origin_y, z_height, 0, 0, 1, tex_left, tex_top, color, alpha);
+vertex_add_point_tex(old_buffer, origin_x, origin_y, z_height, 0, 0, 1, tex_right, tex_top, color, alpha);
+vertex_add_point_tex(old_buffer, width_x, origin_y, 0, 		  0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point_tex(old_buffer, width_x, origin_y, 0, 		  0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point_tex(old_buffer, origin_x, origin_y, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
+vertex_add_point_tex(old_buffer, origin_x, origin_y, 0, 		  0, 0, 1, tex_right, tex_bottom, color, alpha);
+//right / length face
+vertex_add_point_tex(old_buffer, origin_x, origin_y, z_height,  0, 0, 1, tex_left, tex_top, color, alpha);
+vertex_add_point_tex(old_buffer, origin_x, -depth_x, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
+vertex_add_point_tex(old_buffer, origin_x, origin_y, 0, 		  0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point_tex(old_buffer, origin_x, origin_y, 0, 		  0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point_tex(old_buffer, origin_x, -depth_x, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
+vertex_add_point_tex(old_buffer, origin_x, -depth_x, 0, 		  0, 0, 1, tex_right, tex_bottom, color, alpha);
+////top height/face
+vertex_add_point_tex(old_buffer, width_x, origin_y, z_height, 0, 0, 1, tex_left, tex_top, color, alpha);
+vertex_add_point_tex(old_buffer, width_x, -depth_x, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
+vertex_add_point_tex(old_buffer, origin_x, origin_y, z_height,  0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point_tex(old_buffer, origin_x, origin_y, z_height,  0, 0, 1, tex_left, tex_bottom, color, alpha);
+vertex_add_point_tex(old_buffer, width_x, -depth_x, z_height,  0, 0, 1, tex_right, tex_top, color, alpha);
+vertex_add_point_tex(old_buffer, origin_x, -depth_x, z_height,  0, 0, 1, tex_right, tex_bottom, color, alpha);
 
 vertex_end(old_buffer);
 #endregion
@@ -125,11 +161,14 @@ max_v = v_coords[| ds_list_size(v_coords) - 1];
 var v_dist = max_v - min_v;
 
 var u_offset = tex_left;
-var u_length = tex_right - tex_left;
+var u_length = (tex_right - tex_left);
 var v_offset = tex_top;
-var v_length = tex_bottom - tex_top;
+var v_length = (tex_bottom - tex_top);
 
 show_debug_message("min u: " + string(min_u) + ", min v: " + string(min_v) + ", max u: " + string(max_u) + ", max v: " + string(max_v));
+
+show_debug_message("texel width : " + string(texel_w) + ", texel height: " + string(texel_h));
+
 
 for (var i = 0; i < array_length(verts); i++) {
 	vert = verts[i];
@@ -138,15 +177,15 @@ for (var i = 0; i < array_length(verts); i++) {
 	var _z = vert[2];
 
 	var drawCoord = world_to_screen(_x, _y, _z, objCamera.viewmat, objCamera.projmat);
-	var _u = (drawCoord[0] / (1 * objCamera.window_scale)); // - screenWidth/2;
-	var _v = (drawCoord[1] / (1 * objCamera.window_scale)); // - screenHeight/2;
-	_u -= origin[0] /  (1 * objCamera.window_scale);
-	_v -= origin[1] /  (1 * objCamera.window_scale);
-	_u = u_offset + ((1 - ((max_u - _u) / u_dist)) * u_length);
-	_v = v_offset + ((1 - ((max_v - _v) / v_dist))  * v_length);
-	show_debug_message("u: " + string(_u) + ", v: " + string(_v));
+	var _u = (drawCoord[0] / (1)); // - screenWidth/2;
+	var _v = (drawCoord[1] / (1)); // - screenHeight/2;
+	_u -= origin[0] /  (1);
+	_v -= origin[1] /  (1);
+	_u = (u_offset + ((1 - ((max_u - _u) / u_dist)) * u_length) );
+	_v = (v_offset + ((1 - ((max_v - _v) / v_dist))  * v_length));
+	//show_debug_message("u: " + string(_u) + ", v: " + string(_v));
 	
-	vertex_add_point_tex(vbuffer, _x, _y, _z,  0, 0, 1, _u, _v, color, alpha);
+	vertex_add_point_tex(vbuffer, _x, _y, _z,  0, 0, 1, _u, _v, color, 1.0);
 }
 
 ds_list_destroy(u_coords);

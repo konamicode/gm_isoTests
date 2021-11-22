@@ -12,14 +12,35 @@
 //	show_debug_message(global.zoom[global.zoomLvl]);
 //}
 
-if keyboard_check(vk_left)
+//if keyboard_check(vk_left)
+//{
+//	heading += 5;
+//}
+
+//if keyboard_check(vk_right)
+//{
+//	heading -= 5;
+//}
+
+if keyboard_check_pressed(vk_space)
 {
-	heading += 5;
+	rotate = true;
+	camRotate = 0
 }
 
-if keyboard_check(vk_right)
+if (rotate)
 {
-	heading -= 5;
+	//camRotate  = lerp(camRotate, 180, 0.02);
+	camRotate += 1.5;
+	heading = camRotate + 45;
+	show_debug_message(camRotate);
+	if (180 -camRotate <= 1.5)
+	{
+		camRotate = 0;
+		heading = 45;
+		rotate = false;
+	}
+	heading += camRotate;
 }
 
 if keyboard_check_pressed(vk_up)
@@ -46,5 +67,7 @@ if mouse_wheel_down() {
 	pitch += 1;	
 }
 
-
+if keyboard_check_pressed(vk_escape)
+	game_end();
+	
 UpdateCameraPos(target, camType.ortho);
