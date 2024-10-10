@@ -8,7 +8,7 @@ matrix_set(matrix_world, matrix_build(x, y, z, 0, 0, 0, 1, 1, 1));
 vertex_submit(vbuffer, pr_trianglelist, texture);
 draw_point_colour(x, y, c_fuchsia);
 matrix_set(matrix_world, matrix_build_identity());
-draw_rectangle_color(bbox_left, bbox_top, bbox_right, bbox_bottom, c_red,c_red, c_red, c_red, true);
+//draw_rectangle_color(bbox_left, bbox_top, bbox_right, bbox_bottom, c_red,c_red, c_red, c_red, true);
 
 for (var i = 0; i < array_length(verts); i++) {
 	vert = verts[i];

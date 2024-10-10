@@ -65,7 +65,7 @@ var origin_x = 0; // * texel_w;
 var origin_y = 0; //* texel_w;
 
 z = layer_get_depth(layer);
-var z_height = z + height;
+var z_height = z + (dcos(objCamera.pitch) * height);
 
 image_xscale = -(width_x / (bbox_right - bbox_left));
 image_yscale = (depth_x / (bbox_bottom - bbox_top));
